@@ -2,8 +2,30 @@
 
 ## How to run
 
-At the moment there is nothing.
+To make the univeesity database run:
 
+```
+
+mysql -u root -p < schema.sql
+```
+
+You will need to set your DB_USER and DB_PASSWORD yourself:
+
+```
+
+export DB_USER='root'
+export DB_PASSWORD='your-mysql-password'
+
+```
+
+
+To Compile, run the following command:
+
+```
+
+javac Main.java Database.java
+java -cp ".:lib/*" Main
+```
 ## Tables
 
 D1 · Classes
