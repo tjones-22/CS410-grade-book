@@ -9,11 +9,20 @@ Each developer must run this once on their own MySQL server, from the project
 directory, to create `university` and its tables:
 
 ```bash
-mysql -u root -p < schema.sql
+mysql -h 127.0.0.1 -u root -p < schema.sql
 ```
 
 Enter your MySQL root password when prompted. The Java application connects to
 the database; it does not create it. Skip this step if the database is already set up.
+
+Verify that all six tables were created:
+
+```bash
+mysql -h 127.0.0.1 -u root -p -e "SHOW TABLES FROM university;"
+```
+
+Expected tables: `Assignments`, `Categories`, `Classes`, `Enrolled`, `Grades`,
+and `Students`. Replace `root` with your MySQL username if needed.
 
 Set `DB_USER` and `DB_PASSWORD` to your MySQL credentials, then compile and run
 from the project directory:
